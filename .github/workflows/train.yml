@@ -27,13 +27,13 @@ jobs:
           password: ${{ secrets.DOCKER_PASSWORD }}
 
       - name: docker build
-        run: docker build -t ${IMAGE_NAME} .
+        run: docker build -t ${{ secrets.DOCKER_USERNAME }}/cicd_test_v1:assgn3_v1
 
 
       
 
       - name: docker push 
-        run: docker push ${IMAGE_NAME}
+        run: docker push cicd_test_v1:assgn3_v1
   
   Test:
     needs: Train
