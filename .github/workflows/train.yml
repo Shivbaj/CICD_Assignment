@@ -37,7 +37,7 @@ jobs:
           password: ${{ secrets.DOCKER_PASSWORD }}
 
       - name: docker push 
-        run: docker push cicd_test_v1:assgn3_v1
+        run: docker push ${{ secrets.DOCKER_USERNAME }}/cicd_test_v1:assgn3_v1
   
   Test:
     needs: Train
